@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useSelector } from "react-redux";
+import TaskForm from "./components/TaskForm";
+import TaskLIst from "./components/TaskLIst";
 
 function App() {
+  const taskState = useSelector((state) => state.tasks);
+  console.log(taskState);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello world</h1>
+      <TaskForm />
+      <TaskLIst />
     </div>
   );
 }
